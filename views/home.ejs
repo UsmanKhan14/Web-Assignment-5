@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego Enthusiasts' Hub</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+  <%- include('partials/navbar', { page: '/' }) %>
+  
+  <div class="container mx-auto mt-8">
+    <div class="hero bg-base-200 rounded-lg p-8">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Explore the World of Lego</h1>
+          <p class="py-6">Embark on a brick-filled adventure with our extensive Lego collection. Discover sets from various themes and eras!</p>
+          <a href="/lego/sets" class="btn btn-primary">Browse Collection</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <div class="card bg-base-100 shadow-xl">
+        <figure><img src="https://cdn.rebrickable.com/media/sets/002-1.jpg" alt="Lego set Train"></figure>
+        <div class="card-body">
+          <h2 class="card-title">4.5V Train with 5 Wagons</h2>
+          <p>Travel through the scenic routes of your imagination with this iconic train set, a nostalgic piece from 1969.</p>
+          <a href="/lego/sets/002-1" class="btn btn-primary">View Set</a>
+        </div>
+      </div>
+
+      <div class="card bg-base-100 shadow-xl">
+        <figure><img src="https://cdn.rebrickable.com/media/sets/003-1.jpg" alt="Lego set Master Mechanic"></figure>
+        <div class="card-body">
+          <h2 class="card-title">Master Mechanic Set</h2>
+          <p>Take your building skills to the next level with this comprehensive set, perfect for aspiring engineers.</p>
+          <a href="/lego/sets/003-1" class="btn btn-primary">View Set</a>
+        </div>
+      </div>
+
+      <div class="card bg-base-100 shadow-xl">
+        <figure><img src="https://cdn.rebrickable.com/media/sets/005-1.jpg" alt="Lego set Basic Building"></figure>
+        <div class="card-body">
+          <h2 class="card-title">Basic Building Set in Cardboard</h2>
+          <p>Rediscover the fundamentals of Lego building with this classic set designed to inspire creativity.</p>
+          <a href="/lego/sets/005-1" class="btn btn-primary">View Set</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

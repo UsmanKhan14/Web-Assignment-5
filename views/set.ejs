@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= set.name %></title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <%- include('partials/navbar', { page: '' }) %>
+
+  <div class="container mx-auto mt-8">
+    <div class="hero bg-base-200 rounded-lg p-8">
+      <div class="hero-content text-center">
+        <h1 class="text-5xl font-bold"><%= set.name %></h1>
+        <p>Below, you will find detailed information about the set: <%= set.name %></p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+      <div>
+        <img src="<%= set.img_url %>" alt="<%= set.name %>" class="rounded-lg">
+      </div>
+      <div>
+        <p><strong>Year Released:</strong> <%= set.year %></p>
+        <p><strong>Theme:</strong> <%= set.Theme.name %></p>
+        <p><strong>Number of Parts:</strong> <%= set.num_parts %></p>
+        <p id="quote"></p>
+        <a href="#" onclick="history.back(); return false;" class="btn btn-secondary">Go Back</a>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch('https://quotable.io/random')
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById('quote').textContent = `"${data.content}" - ${data.author}`;
+          });
+      });
+    </script>
+  </div>
+</body>
+</html>

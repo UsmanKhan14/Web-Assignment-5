@@ -1,0 +1,10 @@
+<nav class="navbar bg-base-100">
+  <div class="navbar-start">
+      <a class="text-xl font-bold nav-item <%= (page === '/') ? 'active' : '' %>" href="/">Lego Enthusiasts' Hub</a>
+  </div>
+  <div class="navbar-end space-x-4">
+      <a class="nav-item <%= (page === '/lego/sets') ? 'active' : '' %>" href="/lego/sets">View Collection</a>
+      <a class="nav-item <%= (page === '/lego/addSet') ? 'active' : '' %>" href="/lego/addSet">Add Set</a> 
+      <a class="nav-item <%= (page === '/about') ? 'active' : '' %>" href="/about">About</a>
+  </div>
+</nav>

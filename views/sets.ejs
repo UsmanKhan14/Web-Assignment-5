@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO Sets Collection</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <%- include('partials/navbar', { page: '/lego/sets' }) %>
+
+    <div class="container mx-auto mt-8">
+        <div class="hero bg-base-200 rounded-lg p-8">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">LEGO Sets Collection</h1>
+                    <nav class="mt-4">
+                        <a href="/lego/sets?theme=Technic" class="btn btn-primary">Technic</a>
+                        <a href="/lego/sets?theme=Castle" class="btn btn-primary">Castle</a>
+                        <a href="/lego/sets?theme=Space" class="btn btn-primary">Space</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <% sets.forEach(set => { %>
+                <div class="card bg-base-100 shadow-xl">
+                    <figure>
+                        <img src="<%= set.img_url %>" alt="<%= set.name %>">
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title"><%= set.name %></h2>
+                        <p>Theme: <%= set.Theme.name %></p> 
+                        <p>Year: <%= set.year %></p>
+                        <p>Parts: <%= set.num_parts %></p>
+                        <div class="card-actions justify-end">
+                            <a href="/lego/sets/<%= set.set_num %>" class="btn btn-primary">View Details</a>
+                            <a href="/lego/editSet/<%= set.set_num %>" class="btn btn-success">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
